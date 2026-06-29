@@ -67,13 +67,7 @@ st.markdown("""
 # ─── LOAD DATA ─────────────────────────────────────────────────────────────────
 @st.cache_data
 def load_data():
-    df = pd.read_csv
-    (os.path.join(os.path.dirname(__file__), "Nassau_Candy_Distributor.csv"),
-    encoding='utf-8',
-    sep=',',
-    on_bad_lines='skip',
-    engine='python'
-    )
+    df = pd.read_csv(os.path.join(os.path.dirname(__file__), "Nassau_Candy_Distributor.csv"), encoding='utf-8', sep=',', on_bad_lines='skip', engine='python')
     df['Order Date'] = pd.to_datetime(df['Order Date'], dayfirst=True)
     df['Ship Date']  = pd.to_datetime(df['Ship Date'],  dayfirst=True)
     df['Gross Margin (%)'] = (df['Gross Profit'] / df['Sales']) * 100
