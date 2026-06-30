@@ -281,8 +281,8 @@ if module == "📊 Overview & KPIs":
                       color='Gross Margin (%)', color_continuous_scale='Viridis',
                       text='Total_Profit')
         fig4.update_traces(texttemplate='$%{text:,.0f}', textposition='outside')
-        fig4.update_layout(**CHART_LAYOUT, height=320, coloraxis_showscale=False,
-                           yaxis=dict(autorange='reversed'))
+        fig4.update_layout(**CHART_LAYOUT, height=320, coloraxis_showscale=False)
+        fig4.update_yaxis=dict(autorange='reversed')
         st.plotly_chart(fig4, use_container_width=True)
 
 # ══════════════════════════════════════════════════════════════════════════════
